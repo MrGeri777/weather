@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>weather</title>
+	<script src="js/date.pic.js"></script>
+	<script src="js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<select style="position: absolute; z-index: 1; right: calc(50% - 50px);" onchange="change_city(this.value)"> 
+	<!-- Добавления городов -->
+		<option id="city"></option>
+		<option value="San_Francisco:CA">San_Francisco</option>
+		<option value="Norfolk:VA US">Norfolk</option>
+		<option value="Ratece:LJ">Ratece</option>
+		<option value="London:UK">London</option>
+		<option value="Rhyl:UK">Rhyl</option>
+		<option value="Portland:UK">Portland</option>
+	</select>
+	<ul>
+		<li onclick="changed_foc(0)">
+			today
+		</li>
+		<li onclick="changed_foc(1)">
+			tomorrow
+		</li>
+		<li onclick="changed_foc(2)">
+			<input id="picolo" type="date" name="bday" min="2000-01-02" max="1979-12-31" onchange="change_date(this.value)">
+		</li>
+	</ul>
+	<div class="pics">
+		<div class="day" id="day1">
+			<img class="img" src="http://icons.wxug.com/i/c/k/partlycloudy.gif" height="120px">
+			<div class="date" style="padding-left: -10px;"></div>
+			<br>
+			<div class="temp_c"><p class="temp"></p></div>
+			<div class="wind_c">wind: <p class="wind"></p></div><br>
+			<div class="humd_c">humidity: <p class="humd"></p></div>
+		</div>
+		<div class="day active" id="day2">
+			<img class="img" src="http://icons.wxug.com/i/c/k/partlycloudy.gif" height="120px">
+			<div class="date" style="padding-left: -10px;"></div>
+			<br>
+			<div class="temp_c"><p class="temp"></p></div>
+			<div class="wind_c">wind: <p class="wind"></p></div><br>
+			<div class="humd_c">humidity: <p class="humd"></p></div>
+		</div>
+		<div class="day" id="changed">
+			<img class="img" src="http://icons.wxug.com/i/c/k/partlycloudy.gif" height="120px">
+			<div class="date" style="padding-left: -10px;"></div>
+			<br>
+			<div class="temp_c"><p class="temp"></p></div>
+			<div class="wind_c">wind: <p class="wind"></p></div><br>
+			<div class="humd_c">humidity: <p class="humd"></p></div>
+		</div>
+	</div>
+</body>
+</html>
