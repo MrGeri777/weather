@@ -1,7 +1,9 @@
 var parsed_dates;
 var days = document.getElementsByClassName('day');
+var sells = document.getElementsByClassName('sell');
 window.onload=function(){
 	start();
+	changed_foc(localStorage.dayfoc);
 }
 function start(){
 	if(!$_GET("city")||!$_GET("region")){
@@ -29,6 +31,11 @@ function changed_foc(day){
 		days[i].className = 'day';
 	}
 	days[day].className = 'day active';
+	for (var i = 0; i < days.length; i++) {
+		sells[i].className = 'sell';
+	}
+	sells[day].className = 'sell add';
+	localStorage.dayfoc = day;;
 }
 function change_date(val){
 	var date2 = new Date(val);
